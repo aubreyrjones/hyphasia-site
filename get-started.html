@@ -15,14 +15,41 @@
   <header class="hero">
     <h1>Hyphasia</h1>
     <p>Getting Started - Pathfinder's Edition</p>
+    <p>This document describes <em>software in active development</em>.</p>
   </header>
+
+  <section>
+    <h1>Current Support Status</h1>
+    <p>
+        OS: Windows
+    </p>
+    <p>
+        Packaging: Standalone; VST3i.
+    </p>
+    <p>
+        MIDI: Note on/off with velocity sensitivity.
+    </p>
+  </section>
+
+  <section>
+    <h1>Prerequisites</h1>
+    <p>
+        The most important thing you should do before using Hyphasia is update your GPU (video card) drivers.
+    </p>
+    <p>
+        Hyphasia uses only basic hardware features, so you can expect support for older high-end <em>hardware</em>, but the software requires recent 
+        drivers supporting Vulkan&nbsp;1.3. If your hardware does not have drivers with support for Vulkan&nbsp;1.3, it will not be possible to run 
+        Hyphasia until you upgrade to a GPU with newer driver support.
+    </p>
+  </section>
 
   <section>
     <h1>Installing Hyphasia</h1>
     <ol>
-        <li>Download the `VC_redist.x64.exe` and install it. You only need to do this once, ever--even if you download a new version of Hyphasia later.</li>
+        <li>Download the `VC_redist.x64.exe` and install it. You only need to do this once on each machine--even if you download a new version of Hyphasia later.</li>
         <li>The standalone `hyphasia.exe` can simply be downloaded anywhere and double-clicked to launch. No specific steps are required to install it.</li>
-        <li>To install the VST version, unzip it into your system VST directory (often `C:\Program Files\VstPlugins\`, but it may depend on your DAW).</li>
+        <li>To install the VST version, unzip it into your system VST directory (often `C:\Program Files\VstPlugins\`, but it may depend on your DAW). 
+            You should unzip the entire directory (with name ending in `.vst`) as-is.</li>
     </ol>
   </section>
 
@@ -30,7 +57,7 @@
     <h1>Stuff that you might expect, but is under construction</h1>
     <ul>
         <li>Host-exposed parameters and automation.</li>
-        <li>MIDI/Host time and tempo.</li>
+        <li>Musical/MIDI/Host time and tempo.</li>
     </ul>
   </section>
 
