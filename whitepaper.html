@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hyphasia - Phase Sculpture Synthesis</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <section>
+        <h1>Phase Sculpture Synthesis</h1>
+        <p>
+            Phase Sculpture Synthesis began with the observation that an inverse FFT could be used not as a reconstruction step,
+            but as a continuously driven audio generator. This concept has been hinted at and occasionally approached in digital
+            synthesis research, but never realized as an instrument for interactive performance.
+        </p>
+
+        <p>
+            By treating each synthetic result as a loopable audio "snapshot" instead of a linear block of time-bound samples, 
+            PSS directly addresses the typical resolution vs. latency tradeoff thought to be inherent in IFFT synthesis. A very large
+            IFFT block size gives extremely fine frequency control over the entire audible range, while resynthesis from a smoothly evolving 
+            spectrum enables modulation and control without perceptual latency--even when resynthesis occurs at much lower 
+            than the audio sample rate. 
+        </p>
+
+        <p>
+            PSS easily models transients by treating them as amplitude evolution across subsequent snapshots instead of regions of samples
+            within a single linear timeline. This locally-acausal, globally-evolving regime eliminates the majority of complaints typically leveled
+            against synthesis techniques based on IFFT primitives. The remaining problems are ones of performance and musical control.
+        </p>
+        
+        <p>
+            Large, loopable waveforms enable computational decoupling between the synthesis process and the playback process. Playback can continue
+            at whatever rate the host environment requires, while the <em>state</em> of what is played back evolves at its own rate. This decoupling 
+            unlocks an entire design space of asynchronous computational speedups--including complete GPU offload.
+        </p>
+
+        <p>
+            PSS also solves the control problem--populating tens of thousands of FFT bins with interesting, varying spectra--by treating it as an energy
+            distribution problem. The choice of control topology then defines the musical feel of an instrument built on PSS.
+            Besides the stochastic spectra used in Hyphasia, control topologies could be built on sampled spectra, fluid or diffusion-reaction models,
+            physical instrument simulation, analytical fields, or any other scheme that can be made C1 continuous.
+        </p>
+
+        <p>
+            While the roots of phase sculpture synthesis are almost as old as digital synthesis itself, it was not possible to assemble the pieces
+            in this way before the widespread adoption of compute-capable GPUs. Furthermore, previously available techniques for accessing the GPU
+            where either non-portable (CUDA) or offered no meaningful control over scheduling and latency (OpenGL/OpenCL). 
+            Bounded-latency access to GPU resources through modern frameworks such as Metal and Vulkan was a necessary prerequisite for PSS to evolve.
+        </p>
+    </section>
+
+</div>
+</body>
+</html>
