@@ -139,6 +139,19 @@ section li {
   margin-top: 1.5rem;
 }
 
+/* Youtube embeds*/
+
+.yt-figure {
+  max-width: 700px;       /* match your text column */
+  margin: 1.25rem 0 2rem;
+}
+
+.yt-caption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
 
 .yt-grid {
   max-width: 700px;                 /* match your paragraph column */
