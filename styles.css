@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+
+
 :root {
   --bg: #0c0c0f;
   --fg: #e8e8ee;
@@ -11,9 +14,19 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 18px;
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Atkinson Hyperlegible Next", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--fg);
   line-height: 1.6;
@@ -37,8 +50,8 @@ a:hover {
 /* ---------- Hero ---------- */
 
 .hero {
-  padding: 6rem 0 4rem;
-  border-bottom: 1px solid var(--line);
+  padding: 2rem 0 1rem;
+  
 }
 
 .hero h1 {
@@ -56,8 +69,8 @@ a:hover {
 /* ---------- Sections ---------- */
 
 section {
-  padding: 4rem 0;
-  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  
 }
 
 section:last-child {
@@ -79,6 +92,18 @@ section p:last-child {
   margin-bottom: 0;
 }
 
+section ul,
+section ol {
+  max-width: 700px;   /* same as section p */
+  margin: 0 0 1rem;
+  padding-left: 1.25rem; /* just enough for numbers */
+}
+
+section li {
+  color: var(--muted);
+}
+
+
 /* ---------- Support grid ---------- */
 
 .support-grid {
@@ -86,6 +111,7 @@ section p:last-child {
   grid-template-columns: 1.4fr 0.8fr 1.8fr;
   gap: 0.6rem 1.5rem;
   margin-top: 1rem;
+  margin-bottom: 2rem;
   align-items: baseline;
 }
 
@@ -111,6 +137,40 @@ section p:last-child {
 
 .support-note {
   margin-top: 1.5rem;
+}
+
+
+.yt-grid {
+  max-width: 700px;                 /* match your paragraph column */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;           /* space above/below the block */
+}
+
+.yt {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;             /* responsive video shape */
+  border: 1px solid var(--lineSoft);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.yt iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* stack on narrow screens */
+@media (max-width: 700px) {
+  .yt-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Footer ---------- */
